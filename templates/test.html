@@ -1,0 +1,28 @@
+{% load blog_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+</head>
+<body>
+    <h2>TEST is OKEY !!!</h2>
+    <p><h1>test 1 : </h1>{% hello %}</p>
+    <p><h1>test 2 : </h1>{% plustwo 2 %}</p>
+    <p><h1>test 3 : </h1>{% totalposts %}</p>
+    <p><h1>test 4 : </h1>{% posts as allposts %}
+        {% for post in allposts %}
+            <p>{{post.title}}</p>
+        {% endfor %}
+    </p>
+    <p><h1>test 5 : </h1>{% posts as allposts %}
+        {% for post in allposts %}
+            <p>{{post.content|snippet:50}}</p>
+        {% endfor %}
+    </p>
+</p>
+<p><h1>test 6 : </h1> {% latest_posts %}
+</p>
+</body>
+</html>
